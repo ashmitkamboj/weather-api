@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather Learner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Weather Learner</h1>
+
+    <form id="form">
+      <input id="city" placeholder="Any city or town in the world" required>
+      <button>Search</button>
+    </form>
+
+    <div class="toolbar">
+      <button id="locate" type="button" class="secondary">Use my location</button>
+      <label>
+        Units
+        <select id="units">
+          <option value="metric">°C, km/h</option>
+          <option value="imperial">°F, mph</option>
+        </select>
+      </label>
+    </div>
+
+    <div id="status" class="card" hidden></div>
+    <div id="choices" class="card" hidden></div>
+    <div id="current" class="card" hidden></div>
+    <div id="forecast" class="card" hidden></div>
+
+    <details>
+      <summary>Show raw API response</summary>
+      <pre id="raw"></pre>
+    </details>
+  </main>
+
+  <!-- Order matters: api.js defines functions that app.js uses -->
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
